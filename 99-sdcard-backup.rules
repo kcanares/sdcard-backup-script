@@ -1,0 +1,2 @@
+ACTION=="add", SUBSYSTEM=="block", SUBSYSTEMS=="usb", ENV{DEVTYPE}=="partition", \
+  TAG+="systemd", ENV{SYSTEMD_WANTS}="sdcard-backup.service"

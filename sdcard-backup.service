@@ -1,0 +1,9 @@
+[Unit]
+Description=SD Card Backup to OneDrive
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=kyla
+ExecStart=/usr/local/bin/sdcard-backup.sh
