@@ -8,15 +8,14 @@ Automatically backup your mass storage device like an sd card to your cloud prov
 Update some of the constants in the files with your details like your user name. Then,
 Run these commands in your terminal
 ```
-# script
+# Script
 sudo cp sdcard-backup.sh /usr/local/bin/
 sudo chmod +x /usr/local/bin/sdcard-backup.sh
 
-# Systemd units
+# services
 sudo cp sdcard-backup.service /etc/systemd/system/
-sudo cp sdcard-backup.path /etc/systemd/system/
+sudo cp 99-sdcard-backup.rules /etc/udev/rules.d/
 
 # Activation
 sudo systemctl daemon-reload
-sudo systemctl enable --now sdcard-backup.path
 ```

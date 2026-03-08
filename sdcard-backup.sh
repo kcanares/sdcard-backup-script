@@ -10,6 +10,12 @@ CONFIG="/home/$USER_NAME/.config/rclone/rclone.conf"
 UPLOADED_LOG="/home/$USER_NAME/.sdcard-uploaded"
 MOUNT_POINT="/media/$USER_NAME/$UDEV_UUID/$CAMERA_SUBFOLDER"
 
+# Check the SD card mount point exists
+if [ ! -d "$MOUNT_POINT" ]; then
+  echo "[$(date)] Could not find mount point, aborting."
+  exit 1
+fi
+
 # Build rclone command, skipping already-uploaded files if we have a record
 if [ -f "$UPLOADED_LOG" ]; then
   echo "[$(date)] Skipping files in uploaded log..."
