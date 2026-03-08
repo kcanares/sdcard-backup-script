@@ -7,3 +7,4 @@ Wants=network-online.target
 Type=oneshot
 User=kyla
 ExecStart=/usr/local/bin/sdcard-backup.sh
+RemainAfterExit=yes
