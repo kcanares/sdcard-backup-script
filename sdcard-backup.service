@@ -1,10 +1,12 @@
 [Unit]
 Description=SD Card Backup to OneDrive
-After=network-online.target
-Wants=network-online.target
+Requires=media-kyla-3232\\x2d6238.mount
+After=media-kyla-3232\\x2d6238.mount
 
 [Service]
 Type=oneshot
 User=kyla
 ExecStart=/usr/local/bin/sdcard-backup.sh
-RemainAfterExit=yes
+
+[Install]
+WantedBy=media-kyla-3232\\x2d6238.mount

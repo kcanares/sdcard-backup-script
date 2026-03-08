@@ -1,9 +1,0 @@
-[Unit]
-Description=Watch for camera SD Card Mount
-
-[Path]
-PathExists=/media/kyla/3232-6238/DCIM
-Unit=sdcard-backup.service
-
-[Install]
-WantedBy=multi-user.target
